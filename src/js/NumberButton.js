@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NumberButton = () => {
-    buttonhandler = (e) => {
-
+const NumberButton = (props) => {
+    const buttonhandler = () => {
+        props.numberButton(1);
     };
     return (
         <div>

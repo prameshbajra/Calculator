@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 
+import store from '../store/store';
 import InputArea from './InputArea';
 import Actions from './Actions';
 import NumberButton from './NumberButton';
@@ -18,18 +20,21 @@ class App extends Component {
         console.log(typeof this.state.inputValue);
     }
     render() {
+        const storeInstance = store();
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4" />
-                    <div className="col-md-4">
-                        <InputArea inputValue={this.state.inputValue} />
-                        <NumberButton numberButton={this.numberButton} />
-                        <Actions />
+            <Provider store={storeInstance}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-4" />
+                        <div className="col-md-4">
+                            <InputArea inputValue={this.state.inputValue} />
+                            <NumberButton numberButton={this.numberButton} />
+                            <Actions />
+                        </div>
+                        <div className="col-md-4" />
                     </div>
-                    <div className="col-md-4" />
                 </div>
-            </div>
+            </Provider>
         );
     }
 }

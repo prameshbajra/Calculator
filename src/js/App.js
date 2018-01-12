@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import InputArea from './InputArea';
 import Actions from './Actions';
 import NumberButton from './NumberButton';
+import ResultArea from './ResultArea';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             inputValue: '',
+            result: '',
         };
     }
     numberButton = (value) => {
@@ -18,16 +20,42 @@ class App extends Component {
     }
     actionsButton = (action) => {
         const prevValue = this.state.inputValue;
-        if (action === "backspace")
+        switch (action) {
+        case 'C':
             this.setState(() => ({
                 inputValue: prevValue.slice(0, -1),
             }));
-        else {
-            this.setState(() => {
-                return {
-                    inputValue: ""
-                }
-            });
+            break;
+        case 'AC':
+            this.setState(() => ({
+                inputValue: '',
+            }));
+            break;
+        case '+':
+            if (prevValue[prevValue.length - 1] !== '+' && prevValue.length > 0) {
+                this.setState(() => ({ inputValue: prevValue + action }));
+            }
+            break;
+        case '-':
+            if (prevValue[prevValue.length - 1] !== '-' && prevValue.length > 0) {
+                this.setState(() => ({ inputValue: prevValue + action }));
+            }
+            break;
+        case '/':
+            if (prevValue[prevValue.length - 1] !== '/' && prevValue.length > 0) {
+                this.setState(() => ({ inputValue: prevValue + action }));
+            }
+            break;
+        case '*':
+            if (prevValue[prevValue.length - 1] !== '*' && prevValue.length > 0) {
+                this.setState(() => ({ inputValue: prevValue + action }));
+            }
+            break;
+        case '=':
+            // Do calculation part ...
+            this.setState(() => ({ result: eval(this.state.inputValue) }));
+            break;
+        default: this.setState(() => ({ inputValue: '' }));
         }
     }
     render() {
@@ -37,6 +65,7 @@ class App extends Component {
                     <div className="col-md-4" />
                     <div className="col-md-4">
                         <InputArea inputValue={this.state.inputValue} />
+                        <ResultArea result={this.state.result} />
                         <NumberButton numberButton={this.numberButton} />
                         <Actions actionsButton={this.actionsButton} />
                     </div>

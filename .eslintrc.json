@@ -8,6 +8,7 @@
     "rules": {
         "indent": [2, 4],
         "react/jsx-indent": [2, 4],
+        "no-eval": "off",
         "react/jsx-indent-props": "off",
         "react/prop-types": "off",
         "no-underscore-dangle": "off",

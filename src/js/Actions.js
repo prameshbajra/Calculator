@@ -6,8 +6,13 @@ const Actions = (props) => {
     };
     return (
         <div>
-            <input type="button" value="backspace" onClick={buttonHandler} />
-            <input type="button" value="clear all" onClick={buttonHandler} />
+            <input type="button" value="C" onClick={buttonHandler} />
+            <input type="button" value="AC" onClick={buttonHandler} />
+            <input type="button" value="+" onClick={buttonHandler} />
+            <input type="button" value="-" onClick={buttonHandler} />
+            <input type="button" value="*" onClick={buttonHandler} />
+            <input type="button" value="/" onClick={buttonHandler} />
+            <input type="button" value="=" onClick={buttonHandler} />
         </div>
     );
 };

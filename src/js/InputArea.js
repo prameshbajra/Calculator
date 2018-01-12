@@ -5,6 +5,7 @@ const InputArea = props => (
         <input
             type="text"
             name="input"
+            className="form-control"
             value={props.inputValue}
         />
     </div>

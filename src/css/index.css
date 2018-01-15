@@ -1,4 +1,24 @@
-body {
-  color: green; }
-  body h1 {
-    font-family: Courier New, Courier, monospace; }
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+input {
+    border-radius: 0 !important;
+    text-align: right;
+}
+
+#input-result {
+    border: none;
+}
+
+.input-group,
+.input-group-lg {
+    font-size: 3rem !important;
+    border: none;
+    border-top: none;
+    width: 100%;
+}
+
+.input-group input {
+    font-size: 3rem !important;
+}

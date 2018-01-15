@@ -6,13 +6,31 @@ const Actions = (props) => {
     };
     return (
         <div>
-            <input type="button" value="C" onClick={buttonHandler} />
-            <input type="button" value="AC" onClick={buttonHandler} />
-            <input type="button" value="+" onClick={buttonHandler} />
-            <input type="button" value="-" onClick={buttonHandler} />
-            <input type="button" value="*" onClick={buttonHandler} />
-            <input type="button" value="/" onClick={buttonHandler} />
-            <input type="button" value="=" onClick={buttonHandler} />
+            <div className="btn-group btn-group-justified" role="group" aria-label="...">
+                <div className="btn-group" role="group">
+                    <input type="button" className="btn btn-default btn-lg" value="C" onClick={buttonHandler} />
+                </div>
+                <div className="btn-group" role="group">
+                    <input type="button" className="btn btn-default btn-lg" value="AC" onClick={buttonHandler} />
+                </div>
+            </div>
+            <div className="btn-group btn-group-justified" role="group" aria-label="...">
+                <div className="btn-group" role="group">
+                    <input type="button" className="btn btn-default btn-lg" value="+" onClick={buttonHandler} />
+                </div>
+                <div className="btn-group" role="group">
+                    <input type="button" className="btn btn-default btn-lg" value="-" onClick={buttonHandler} />
+                </div>
+                <div className="btn-group" role="group">
+                    <input type="button" className="btn btn-default btn-lg" value="*" onClick={buttonHandler} />
+                </div>
+                <div className="btn-group" role="group">
+                    <input type="button" className="btn btn-default btn-lg" value="/" onClick={buttonHandler} />
+                </div>
+                <div className="btn-group" role="group">
+                    <input type="button" className="btn btn-default btn-lg" value="=" onClick={buttonHandler} />
+                </div>
+            </div>
         </div>
     );
 };

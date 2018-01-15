@@ -62,14 +62,14 @@ class App extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4" />
-                    <div className="col-md-4">
+                    <h1 className="text-center">React Calculator</h1>
+                    <br />
+                    <div className="col-md-6 col-md-offset-3">
                         <InputArea inputValue={this.state.inputValue} />
                         <ResultArea result={this.state.result} />
-                        <NumberButton numberButton={this.numberButton} />
                         <Actions actionsButton={this.actionsButton} />
+                        <NumberButton numberButton={this.numberButton} />
                     </div>
-                    <div className="col-md-4" />
                 </div>
             </div>
         );
